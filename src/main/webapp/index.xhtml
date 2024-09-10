@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+   <title>Like Hero To Zero - Home</title>
+   <link rel="stylesheet" href="#{request.contextPath}/css/style.css"/>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+</h:head>
+<h:body>
+   <ui:include src="include/header.xhtml"/>
+
+   <div class="content">
+      <h1>Welcome to Like Hero To Zero!</h1>
+
+      <p>Our mission is to monitor global CO2 emissions and promote the path from "Hero" to "Zero" – from high emissions to zero. On this platform, we provide you with a comprehensive overview of emission data from various countries.</p>
+
+      <div class="emission-box">
+         <h2>Latest CO2 Emission Value for Your Country:</h2>
+
+         <h:panelGroup rendered="#{indexController.newestEmissionData != null}">
+            <div class="emission-value-container">
+               <div class="emission-value">
+                  <span class="country">#{sessionService.locale.getDisplayCountry()}:</span>
+                  <span class="value">
+                     <h:outputText value="#{indexController.newestEmissionData.roundedValue}">
+                        <f:convertNumber pattern="#,##0.000"/>
+                     </h:outputText>
+                  </span>
+                  <span class="unit">kt</span>
+               </div>
+            </div>
+            <div class="emission-date">
+               <span class="date-label">As of:</span>
+               <span class="date-value">
+                  <h:outputText value="#{indexController.newestEmissionData.reportedFor}">
+                     <f:convertDateTime pattern="yyyy-MM-dd"/>
+                  </h:outputText>
+               </span>
+            </div>
+         </h:panelGroup>
+
+         <h:panelGroup rendered="#{indexController.newestEmissionData == null}">
+            <p class="no-data">No emission values are available for your country.</p>
+         </h:panelGroup>
+      </div>
+   </div>
+</h:body>
+</html>

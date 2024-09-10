@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+   <title>Like Hero To Zero - Country Settings</title>
+   <link rel="stylesheet" href="#{request.contextPath}/css/style.css"/>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+</h:head>
+<h:body>
+   <ui:include src="include/header.xhtml"/>
+
+   <div class="content session-settings">
+      <h1>Country Settings</h1>
+
+      <p>Please select your country:</p>
+
+      <h:form>
+         <p:messages id="messages" showDetail="true" closable="true">
+            <p:autoUpdate />
+         </p:messages>
+
+         <div id="countryForm">
+            <p:panelGrid columns="2" layout="grid" styleClass="ui-panelgrid-blank">
+               <p:outputLabel for="country" value="Country:"/>
+               <p:selectOneMenu id="country" value="#{countryController.country}" validator="#{countryController.validateCountryChange}">
+                  <f:selectItems value="#{countryController.availableCountries.entrySet()}" var="entry" itemValue="#{entry.key}" itemLabel="#{entry.value.displayCountry}"/>
+               </p:selectOneMenu>
+            </p:panelGrid>
+
+            <p:commandButton value="Change Country" action="#{countryController.changeCountry}" update="@form" styleClass="ui-button-primary"/>
+         </div>
+      </h:form>
+   </div>
+</h:body>
+</html>

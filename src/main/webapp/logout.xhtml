@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+   <title>Like Hero To Zero - Log out</title>
+   <link rel="stylesheet" href="#{request.contextPath}/css/style.css"/>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+</h:head>
+<h:body>
+   <ui:include src="include/header.xhtml"/>
+   <div class="content emission-values">
+
+      <h1>Logout</h1>
+
+      <h:panelGroup rendered="#{!sessionService.loggedIn}">
+         <p>
+            You are not logged in! <h:outputLink value="login.xhtml">Log in?</h:outputLink>
+         </p>
+      </h:panelGroup>
+
+      <h:form rendered="#{sessionService.loggedIn}">
+         <p:commandButton value="Log out" action="#{logoutController.logout()}"/>
+      </h:form>
+
+   </div>
+</h:body>
+</html>

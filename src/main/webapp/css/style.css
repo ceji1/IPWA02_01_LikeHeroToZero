@@ -1,0 +1,409 @@
+/* Base styles and typography */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+.logo {
+    max-height: 65px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #011b4f;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.nav-container {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+.user-info {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.country-info, .login-info {
+    white-space: nowrap;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+ul#nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+ul#nav li {
+    margin: 0 10px;
+}
+
+ul#nav li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    background-color: #2980b9;
+    border-radius: 3px;
+}
+
+.change-link, .logout-link, .login-link {
+    color: #fff;
+    text-decoration: underline;
+    margin-left: 5px;
+}
+
+/* Main content area */
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #34495e;
+    font-size: 1.8em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Links styling */
+a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Form elements */
+.ui-selectonemenu, .ui-inputtext, .ui-password, .ui-inputnumber, .ui-calendar input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.ui-selectonemenu:hover, .ui-inputtext:hover, .ui-password:hover, .ui-inputnumber:hover, .ui-calendar input:hover {
+    border-color: #3498db;
+}
+
+.ui-selectonemenu-label {
+    padding: 10px !important;
+}
+
+/* Buttons styling */
+.ui-button, button, input[type="submit"], .ui-commandbutton {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 5px;
+}
+
+.ui-button:hover, button:hover, input[type="submit"]:hover, .ui-commandbutton:hover {
+    background-color: #2980b9;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Messages and Alerts */
+.alert, .ui-messages-error, .ui-message-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+/* PrimeFaces specific styles */
+.ui-widget {
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+.ui-datepicker {
+    padding: 0.2em;
+}
+
+.ui-datepicker table {
+    font-size: 0.9em;
+}
+
+.ui-widget-header {
+    background: #3498db;
+    color: #ffffff;
+}
+
+/* Login page */
+.login-form {
+    max-width: 400px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Increased shadow */
+}
+
+.login-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-form .ui-panelgrid {
+    width: 100%;
+}
+
+.login-form .ui-inputtext,
+.login-form .ui-password {
+    width: 100%;
+}
+
+/* Emission Values and Session pages */
+.emission-values, .session-settings {
+    padding: 20px;
+}
+
+.emission-values h1, .session-settings h1 {
+    margin-bottom: 20px;
+}
+
+.emission-values .ui-selectonemenu, .session-settings .ui-selectonemenu {
+    width: 100%;
+    max-width: 400px;
+}
+
+.emission-form, .session-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.emission-box {
+    background-color: #f0f8ff;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.emission-box h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+/* Enhanced styles for the home page */
+.emission-value-container {
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.emission-value {
+    font-size: 1.5em;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.emission-value .country {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.emission-value .value {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #000;
+}
+
+.emission-value .unit {
+    font-size: 0.7em;
+    font-weight: bold;
+    color: #7f8c8d;
+}
+
+.emission-date {
+    text-align: center;
+    font-size: 1.0em;
+    margin-top: 15px;
+}
+
+.emission-date .date-label {
+    font-weight: bold;
+    text-decoration: underline;
+    margin-right: 10px;
+}
+
+.emission-date .date-value {
+    font-weight: bold;
+    color: #34495e;
+}
+
+.no-data {
+    color: #e74c3c;
+    font-style: italic;
+}
+
+/* Approval buttons */
+.btn-approve {
+    background-color: #2ecc71;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.btn-reject {
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-approve:hover, .btn-reject:hover {
+    opacity: 0.8;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+    }
+
+    .logo-container, .nav-container, .user-info {
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    ul#nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul#nav li {
+        margin: 5px 0;
+    }
+
+    .user-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .country-selector {
+        margin-bottom: 10px;
+    }
+
+    .ui-button, button, input[type="submit"], .ui-commandbutton {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .content, .login-form {
+        padding: 15px;
+    }
+
+    .emission-value {
+        font-size: 2em;
+    }
+
+    .emission-date {
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+   <title>Like Hero To Zero - Login</title>
+   <link rel="stylesheet" href="#{request.contextPath}/css/style.css"/>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+</h:head>
+<h:body>
+   <ui:include src="include/header.xhtml"/>
+
+   <div class="content">
+      <div class="login-form">
+         <h1>Login</h1>
+
+         <h:panelGroup rendered="#{!sessionService.loggedIn}">
+            <p>Please log in with your credentials!</p>
+
+            <h:form>
+               <p:messages id="messages" showDetail="true" closable="true">
+                  <p:autoUpdate />
+               </p:messages>
+
+               <h:panelGrid columns="2" cellpadding="5">
+                  <p:outputLabel for="username" value="Username:"/>
+                  <p:inputText id="username" value="#{loginController.username}" required="true" requiredMessage="Username is required">
+                     <f:event type="postValidate" listener="#{loginController.postValidateName}"/>
+                  </p:inputText>
+
+                  <p:outputLabel for="password" value="Password:"/>
+                  <p:password id="password" value="#{loginController.password}" required="true" requiredMessage="Password is required">
+                     <f:event type="postValidate" listener="#{loginController.postValidatePassword}"/>
+                  </p:password>
+               </h:panelGrid>
+
+               <p:commandButton value="Login" action="#{loginController.login}" update="@form" styleClass="ui-button-primary"/>
+            </h:form>
+         </h:panelGroup>
+
+         <h:panelGroup rendered="#{sessionService.loggedIn}">
+            <p>You are already logged in! <h:outputLink value="logout.xhtml">Log out?</h:outputLink></p>
+         </h:panelGroup>
+      </div>
+   </div>
+</h:body>
+</html>
